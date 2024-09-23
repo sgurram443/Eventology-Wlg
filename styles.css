@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ffebc4, #ffebc4);
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* Required for positioning the top-right corner div */
+    cursor: url('/assets/Designer.png')20 20, auto; /* Add your custom balloon cursor */
+    
+}
+
+/* Menu Bar */
+.menu-bar {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 20%;
+    background: #ffebc4;
+    padding: 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001; /* Ensure it appears above other elements */
+}
+
+.menu-bar img {
+    height: 90px;
+    width: 190px;
+    padding-top: 8px;
+}
+
+.menu-bar .menu-items {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-bar .menu-items a {
+    position: relative;
+    padding-left: 5%;
+    color: #f58a2f;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight:500;
+    transition: color 0.3s ease;
+}
+
+.menu-bar .menu-items a:hover {
+    color: #ec4b24;
+}
+
+.menu-bar .menu-items a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ec4b24;
+    transition: width 0.3s ease;
+}
+
+.menu-bar .menu-items a:hover::after {
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    margin-top: 100px;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    transform: rotateX(-42deg);
+}
+
+.slider span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 3.6deg)) translateZ(300px) rotateY(110deg);
+}
+
+.slider span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+    border-radius: 10px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+
+.slider span:hover img {
+    transform: translateX(-50px) scale(1.2);
+    
+}
+
+.slider span[data-category="category-1"] {
+/* Example styles */
+border: 2px solid none; /* Adding a border */
+background-color:none; /* Adding a background color */
+}
+
+.slider span[data-category="category-2"] {
+border: 2px solid none; /* Adding a border */
+background-color:none;   
+}
+
+.slider span[data-category="category-3"] {
+border: 2px solid none; /* Adding a border */
+background-color: none;   
+}
+
+.slider span[data-category="category-4"] {
+border: 2px solid none; /* Adding a border */
+background-color: none;   
+}
+.slider span[data-category="category-5"] {
+border: 2px solid none; /* Adding a border */
+background-color: none;   
+}
+.slider span[data-category="category-6"] {
+border: 2px solid none; /* Adding a border */
+background-color:none;   
+}
+.slider span[data-category="category-7"] {
+border: 2px solid none; /* Adding a border */
+background-color:none;   
+}
+
+
+
+/* Top-right corner image container */
+.top-right-img {
+    position: absolute;
+    top: 200px;
+    right: 440px;
+    width: 400px;
+    height: 215px;
+    
+    border: none;
+    border-radius: none;
+    overflow: hidden;
+    display: flex;
+    z-index: 1000; /* Ensure it appears above other elements */
+    justify-content: center;
+align-items: center;
+font-size: 24px;
+color: #333; /* Text color */
+}
+
+.top-right-img img {
+    display: none; /* Hidden by default */
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+}
+.top-right-img p {
+margin: 0;
+color: #f58a2f;
+font-size:30px;
+font-weight:400;
+padding: 10px 20px; /* Add some padding around the text */
+background-color:none; /* Set your desired background color */
+text-align: center;
+}
+/* Category labels */
+.category-labels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    
+    pointer-events: auto; /* Allow clicks to pass through */
+}
+
+
+
+.category-labels div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 3.6deg)) translateZ(460px)  rotateY(calc(-1 * var(--i) * 3.6deg));
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
